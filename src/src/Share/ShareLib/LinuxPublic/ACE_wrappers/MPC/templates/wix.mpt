@@ -1,0 +1,4 @@
+// -*- MPC -*-
+// $Id: wix.mpt 1758 2010-05-17 06:45:46Z hillj $
+
+conditional_include "common"

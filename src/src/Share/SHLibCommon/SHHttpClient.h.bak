@@ -1,0 +1,28 @@
+#pragma once
+#include <string>
+#include <SHSocket.h>
+#include <SHString.h>
+#include <Common.h>
+class SH_EXPORT CSHHttpClient
+{
+public:
+	CSHHttpClient(string url);
+	CSHHttpClient();
+	~CSHHttpClient(void);
+public:
+	string Save();
+	string Load();
+	void   SetUrl(string url);
+	void   AddParam(string key,string value);
+	string GetHttpGetRequest(string url);
+private:
+	string LoadUrl(string url,string param);
+	string SaveUrl(string url,string param);
+	string GetPath(string url);
+	string GetHost(string url);
+	int    GetPort(string url);
+	string WriteAndRead(string host,int port,string data);
+private:
+	string m_url;
+	map<string,string> m_params;
+};
